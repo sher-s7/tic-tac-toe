@@ -13,11 +13,17 @@ const gameBoard = (() => {
     const resetBoard = () => {
         for (tile of board()) {
             tile.innerHTML = '';
+            tile.style.color = 'white';
             gameEnd = false;
             currentPlayer = null;
         }
     }
-    return { board, resetBoard }
+    const colorTiles = (color) => {
+        for(tile of board()){
+            tile.style.backgroundColor = color;
+        }
+    }
+    return { board, resetBoard, colorTiles }
 })();
 
 const Player = (piece) => {
@@ -26,7 +32,11 @@ const Player = (piece) => {
 }
 
 new_game_button.addEventListener('click', () => {
-    new_game_button.style.display = 'none';
+    new_game_button.style.visibility = 'hidden';
+    new_game_button.style.opacity = '0';
+    gameBoard.resetBoard();
+    gameBoard.colorTiles('#523535');
+    congrats_msg.style.visibility = 'hidden';
     player1 = Player('X');
     player2 = Player('O');
     currentPlayer = player1;
@@ -43,7 +53,10 @@ const game = (() => {
         for (combo of winning_combos) {
             if (gameBoard.board()[combo[0]].innerHTML == piece && gameBoard.board()[combo[1]].innerHTML == piece &&
                 gameBoard.board()[combo[2]].innerHTML == piece) {
-                return true;
+                    gameBoard.board()[combo[0]].style.color = 'lightgreen';
+                    gameBoard.board()[combo[1]].style.color = 'lightgreen';
+                    gameBoard.board()[combo[2]].style.color = 'lightgreen';
+                    return true;
             }
         }
         return false;
@@ -73,16 +86,15 @@ for (tile of gameBoard.board()) {
             if (!e.target.innerHTML.includes('X') && !e.target.innerHTML.includes('O')) {
                 game.addPiece(e.target)
             }
-        }else{
-            gameBoard.resetBoard();
-            new_game_button.style.display = 'block';
-            congrats_msg.innerHTML = ''
         }
 
         if(game.won('X') || game.won('O') || game.tied()){
             gameEnd = true;
             player1 = null;
             player2 = null;
+            new_game_button.style.visibility = 'visible';
+            new_game_button.style.opacity = '1';
+            gameBoard.colorTiles('#312d2d');
             if(game.won('X')){
                 congrats_msg.innerHTML = `Player X has won`;
             }else if(game.won('O')){
@@ -90,6 +102,7 @@ for (tile of gameBoard.board()) {
             }else if(game.tied()){
                 congrats_msg.innerHTML = 'A tie'
             }
+            congrats_msg.style.visibility = 'visible'
         }
     });
 

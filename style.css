@@ -8,7 +8,7 @@ h1{
     color: #523535;
     margin-left: auto;
     margin-right: auto;
-
+    width: 70%;
     
 }
 
@@ -39,12 +39,12 @@ td button {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #523535;
+    background: #312d2d;
     border: transparent;
     border-radius: 15px;
     width: 100%;
     transform: scale(0.99, 0.99);
-    transition-duration: 0.1s;
+    transition-duration: 0.3s;
     font-size: 25vw;
     color: white;
 }
@@ -56,6 +56,27 @@ td button:active{
 td button:focus{
     outline: none;
     box-shadow: 0 0 0pt 1pt #d6adad;
+}
+
+#new-game-wrapper{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#message{
+    margin-bottom: 10px;
+}
+
+#new-game{
+    border: transparent;
+    border-radius: 3px;
+    padding: 10px 15px;
+    background-color: #523535;
+    color: white;
+    transition-duration: 0.2s;
+}
+#new-game:hover{
+    transform: scale(1.05, 1.05);
 }
 @media only screen and (min-width: 600px){
     table{
@@ -84,7 +105,10 @@ td button:focus{
 }
 @media only screen and (min-width: 1800px){
     table{
-        width: 35vw;
+        width: 30vw;
+    }
+    td button{
+        font-size: 8vw;
     }
 
    
