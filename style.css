@@ -3,7 +3,7 @@
     background-color: #836868;
 }
 h1{
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     color: #523535;
     margin-left: auto;
@@ -19,7 +19,7 @@ h1:hover, h1:focus{
 table {
     width: 100%;
     margin: 0 auto;
-    padding: 10px 0px;
+    /* padding: 5px 0px; */
 }
 
 td {
@@ -105,10 +105,10 @@ td button:focus{
 }
 @media only screen and (min-width: 1800px){
     table{
-        width: 30vw;
+        width: 27vw;
     }
     td button{
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
    
