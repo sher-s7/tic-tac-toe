@@ -1,19 +1,23 @@
-*{
-    font-family: 'Varela Round', sans-serif;
+* {
+    font-family: "Varela Round", sans-serif;
     background-color: #836868;
 }
-h1{
+h1 {
     margin-top: 30px;
     text-align: center;
     color: #523535;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-    
 }
 
-h1:hover, h1:focus{
-    transform: scale(1.03,1.03);
+h1:hover,
+h1:focus {
+    transform: scale(1.03, 1.03);
+}
+
+button {
+    -webkit-appearance: none;
 }
 
 table {
@@ -49,25 +53,25 @@ td button {
     color: white;
 }
 
-td button:active{
+td button:active {
     transform: scale(0.94, 0.94);
 }
 
-td button:focus{
+td button:focus {
     outline: none;
     box-shadow: 0 0 0pt 1pt #d6adad;
 }
 
-#new-game-wrapper{
+#new-game-wrapper {
     text-align: center;
     margin-top: 10px;
 }
 
-#message{
+#message {
     margin-bottom: 10px;
 }
 
-#new-game{
+#new-game {
     border: transparent;
     border-radius: 3px;
     padding: 10px 15px;
@@ -75,42 +79,39 @@ td button:focus{
     color: white;
     transition-duration: 0.2s;
 }
-#new-game:hover{
+#new-game:hover {
     transform: scale(1.05, 1.05);
 }
-@media only screen and (min-width: 600px){
-    table{
+@media only screen and (min-width: 600px) {
+    table {
         width: 80vw;
     }
-    td button{
+    td button {
         font-size: 20vw;
     }
 }
-@media only screen and (min-width: 900px){
-    table{
+@media only screen and (min-width: 900px) {
+    table {
         width: 55vw;
     }
-    td button{
+    td button {
         font-size: 15vw;
     }
 }
 
-@media only screen and (min-width: 1200px){
-    table{
+@media only screen and (min-width: 1200px) {
+    table {
         width: 35vw;
     }
-    td button{
+    td button {
         font-size: 10vw;
     }
 }
-@media only screen and (min-width: 1800px){
-    table{
+@media only screen and (min-width: 1800px) {
+    table {
         width: 27vw;
     }
-    td button{
+    td button {
         font-size: 7vw;
     }
-
-   
 }
-
